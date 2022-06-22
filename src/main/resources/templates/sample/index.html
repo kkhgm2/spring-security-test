@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>ユーザー名</th>
+    <th>権限</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="user : ${userList}">
+    <th th:text="${user.username}">(username)</th>
+    <td th:text="${user.authority}">(authority)</td>
+  </tr>
+  </tbody>
+</table>
+
+<a href="./logout" th:href="@{/logout}">ログアウト</a>    
+</body>
+</html>
